@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="root">
+      <header>Mazer</header>
+      <main>
+        <div class="sizeSel">
+          <div class="length">
+            <label for="length">Lenght</label>
+            <input
+              type="range"
+              name="lengthRange"
+              id="lengthRange"
+              min="1"
+              max="25"
+              value="3"
+            />
+            <div class="lengthVal value">3</div>
+          </div>
+          <div class="height">
+            <label for="height">Height</label>
+            <input
+              type="range"
+              name="heightRange"
+              id="heightRange"
+              min="1"
+              max="25"
+              value="3"
+            />
+            <div class="heightVal value">3</div>
+          </div>
+        </div>
+        <div class="startStop">
+          <div class="start ssCont">
+            <div class="sssub">
+              <label for="startx">Start X:</label>
+              <input type="number" min="0" value="0" name="startx" id="startx">
+            </div>
+            <div class="sssub">
+              <label for="startY">Start Y:</label>
+              <input type="number" min="0" value="0" name="startY" id="starty">
+            </div>
+          </div>
+          <div class="stop ssCont">
+            <div class="sssub">
+              <label for="stopx">Stop X:</label>
+              <input type="number" min="0" value="0" name="stopx" id="stopx">
+            </div>
+            <div class="sssub">
+              <label for="stopY">Stop Y:</label>
+              <input type="number" min="0" value="0" name="stopY" id="stopy">
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          Mark the blockages in the grid below:
+          <div class="grid"></div>
+          <div class="buttons">
+            <button id="find">Find</button>
+            <button id="restart">Restart</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

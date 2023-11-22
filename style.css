@@ -1,0 +1,151 @@
+@font-face {
+  font-family: Roboto;
+  src: url(./Roboto/Roboto-Regular.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 100vw;
+  background-color: rgb(168, 236, 185);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 5px;
+}
+
+body {
+  background-color: rgb(248, 255, 249);
+}
+
+.sizeSel {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+
+.sizeSel>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sizeSel>div>label {
+  padding-bottom: 10px;
+}
+
+.value {
+  margin-top: 10px;
+  border: 0.5px solid rgba(0, 0, 0, 0.4);
+  padding: 3px 4px;
+  border-radius: 10%; 
+}
+
+.content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.gridElement {
+  padding: 30px;
+  margin: 2px;
+  height: 1em;
+  width: 1em;
+  border: 1px solid black;
+  border-radius: 8px;
+  transition: all 1000ms ease-out;
+  transition: transform 100ms ease-in-out;
+  transition: border 100ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridElement:hover {
+  transform: scale(1.1);
+  border: 0.5px solid gray;
+}
+
+.gridElement.selected {
+  background-color: rgb(44, 44, 44);
+}
+
+.gridElement.path {
+  background-color: rgb(174, 238, 174);
+  border-color: rgb(159, 219, 159);
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttons *{
+  outline: none;
+  padding: 5px 20px;
+  margin: 10px;
+  transition: all 200ms ease;
+  background-color: rgb(226, 255, 226);
+  border:1px solid rgb(157, 194, 157);
+  border-radius: 50px;
+}
+
+.buttons *:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+
+}
+
+.startStop {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.ssCont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sssub {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="number"] {
+  width: 30px;
+  padding: 2px 5px;
+}
