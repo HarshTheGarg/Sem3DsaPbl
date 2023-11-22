@@ -98,6 +98,11 @@ body {
   border-color: rgb(159, 219, 159);
 }
 
+.gridElement.nopath {
+  background-color: red;
+  border-color: red;
+}
+
 .buttons {
   margin-top: 20px;
   display: flex;

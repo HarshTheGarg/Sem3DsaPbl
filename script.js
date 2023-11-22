@@ -72,24 +72,17 @@ function displayStartEnd() {
   let startx = document.querySelector("#startx").value;
   let starty = document.querySelector("#starty").value;
 
-  // console.log({ startx, starty });
-
   document.querySelector(
     `[data-xpos="${+startx}"][data-ypos="${+starty}"]`
   ).innerHTML = "S";
 
+  //stop
   let stopx = document.querySelector("#stopx").value;
   let stopy = document.querySelector("#stopy").value;
-  // console.log({stopy});
 
   document.querySelector(
     `[data-xpos="${+stopx}"][data-ypos="${+stopy}"]`
   ).innerHTML = "E";
-  // document.querySelector(
-  //   `[data-xpos="${stopx}"][data-ypos="${stopy}"]`
-  // ).innerHTML = "E";
-
-  // console.log({startx, starty, stopx, stopy})
   updateSourDest(startx, starty, stopx, stopy);
 }
 
@@ -174,32 +167,32 @@ function toggleElement(e) {
 }
 
 function markPath(result) {
-  // console.log({ result });
-  result.forEach((element) => {
-    let el = document.querySelector(
-      `[data-xpos="${element.x}"][data-ypos="${element.y}"]`
-    );
-    el.classList.add("path");
-  });
-
-  [...document.querySelector(".grid").children].forEach((row) => {
-    // console.log(row.children);
-    [...row.children].forEach((element) => {
-      // console.log(element);
-      element.removeEventListener("click", toggleElement);
+  if ((Object.keys(result)).length == 0) {
+    [...document.querySelector(".grid").children].forEach((row) => {
+      [...row.children].forEach((element) => {
+        element.classList.add("nopath");        
+      })
+    })
+  } else {
+    result.forEach((element) => {
+      let el = document.querySelector(
+        `[data-xpos="${element.x}"][data-ypos="${element.y}"]`
+      );
+      el.classList.add("path");
     });
-  });
+
+    [...document.querySelector(".grid").children].forEach((row) => {
+      // console.log(row.children);
+      [...row.children].forEach((element) => {
+        // console.log(element);
+        element.removeEventListener("click", toggleElement);
+      });
+    });
+  }
 }
 
 let result;
 document.querySelector("#find").addEventListener("click", function () {
-  // restartVisited();
-
-  // sou = [0, 0];
-  // dest = [2, 2];
-
-  console.log({ sou, dest });
-
   let res = [
     {
       x: sou[0],
@@ -215,7 +208,6 @@ document.querySelector("#find").addEventListener("click", function () {
 });
 
 function isPos(nx, ny) {
-  // console.table(visited);
   if (
     nx >= 0 &&
     nx < height &&
